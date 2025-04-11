@@ -1,0 +1,14 @@
+my_new_project:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: sfedu02-ksb65579
+      database: user_db_swan
+      password: Devdhakshan2410$
+      role: training_role
+      schema: analytics
+      threads: 6
+      user: swan
+      warehouse: swan_query_wh
+
