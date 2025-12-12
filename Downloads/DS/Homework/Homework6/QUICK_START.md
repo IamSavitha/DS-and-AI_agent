@@ -16,7 +16,7 @@ cp env.template .env
 
 # Edit .env and add your MongoDB connection string
 # For local: mongodb://localhost:27017/productdb
-# For Atlas: mongodb+srv://user:pass@cluster.mongodb.net/productdb
+# For Atlas: mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/productdb
 
 # Start MongoDB (if local)
 # macOS: brew services start mongodb-community

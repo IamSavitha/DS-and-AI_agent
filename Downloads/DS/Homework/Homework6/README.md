@@ -50,7 +50,7 @@ PORT=5000
 
 For MongoDB Atlas, use:
 ```env
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/productdb
+MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/productdb
 PORT=5000
 ```
 

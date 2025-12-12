@@ -106,7 +106,7 @@ mongoose.connect(process.env.MONGODB_URI)
 ```
 - **Concept**: Database connection
 - **Explanation**: Connects to MongoDB using the connection string from environment variables
-- **MongoDB URI format**: `mongodb://localhost:27017/database_name` or `mongodb+srv://user:pass@cluster.mongodb.net/dbname`
+- **MongoDB URI format**: `mongodb://localhost:27017/database_name` or `mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/dbname`
 
 ```javascript
   .then(() => console.log('MongoDB connected successfully'))

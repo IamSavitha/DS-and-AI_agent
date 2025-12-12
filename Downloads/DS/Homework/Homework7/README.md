@@ -63,7 +63,7 @@ This will install all required packages:
 
    **For MongoDB Atlas (Cloud):**
    ```env
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/hw7_auth_db
+   MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/hw7_auth_db
    ```
 
    **Generate a Strong JWT Secret:**
@@ -78,7 +78,7 @@ This will install all required packages:
    **Complete .env file example:**
    ```env
    MONGODB_URI=mongodb://localhost:27017/hw7_auth_db
-   JWT_SECRET=your_super_secret_jwt_key_change_this_in_production
+   JWT_SECRET=REPLACE_WITH_YOUR_GENERATED_SECRET_KEY
    TOKEN_EXPIRY=24h
    PORT=3000
    NODE_ENV=development

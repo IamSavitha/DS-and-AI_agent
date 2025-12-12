@@ -2,6 +2,12 @@
 Homework/Homework4/task-tracker-demo.zip
 Homework/Homework5/React-redux.zip
 
+# Environment variables and secrets
+**/.env
+**/.env.local
+**/.env.*.local
+*.env
+
 # Node modules
 **/node_modules/
 
