@@ -1,0 +1,17 @@
+# Requirements for HW9: Redis Caching and Semantic Search
+
+# Core dependencies
+redis>=5.0.0
+numpy>=1.24.0
+
+# For Task 2: Semantic Caching
+sentence-transformers>=2.2.0
+torch>=2.0.0  # Required by sentence-transformers
+requests>=2.31.0
+
+# Optional: For Redis vector search (if using RedisStack)
+# redis[hiredis]>=5.0.0  # Faster Redis client
+
+# Note: Make sure Redis and Ollama are installed separately
+# Redis: https://redis.io/download
+# Ollama: https://ollama.ai/

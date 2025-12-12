@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Book</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <!-- 
+        ========================================================================
+        UPDATE BOOK FORM - EJS TEMPLATE
+        ========================================================================
+        
+        CONCEPTS:
+        1. Update Operations: Modifying existing resources
+        2. Form Pre-population: Could show existing book data (advanced)
+        3. Book Selection: User must specify which book to update (by BookID)
+        4. Partial Updates: User provides BookID + new Title and Author
+        
+        ========================================================================
+    -->
+    
+    <div class="container">
+        <h1 class="heading">Update Book</h1>
+    </div>
+
+    <!-- 
+        Display existing books so user knows which BookIDs are available
+        This uses EJS templating to loop through the books array
+    -->
+    <h2>Existing Books (for reference):</h2>
+    <table class="books-table">
+        <thead>
+            <tr>
+                <th>Book ID</th>
+                <th>Title</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 
+                EJS Template Syntax:
+                <% %> - Executes JavaScript code (no output)
+                <%= %> - Executes JavaScript and outputs the result as HTML
+                
+                books.forEach() loops through each book in the array
+            -->
+            <% books.forEach(function(book){ %>
+                <tr>
+                    <td><%= book.BookID %></td>
+                    <td><%= book.Title %></td>
+                    <td><%= book.Author %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <!-- 
+        Update Form:
+        - action="/update-book": Sends data to update endpoint
+        - method="POST": Uses POST method (for updating resources)
+    -->
+    <h2>Update Book Information:</h2>
+    <form action="/update-book" method="POST">
+        <!-- 
+            Book ID Input:
+            - User must enter the BookID of the book they want to update
+            - This identifies which book to modify
+        -->
+        <div class="form-group">
+            <label for="BookID">Book ID to Update:</label>
+            <input 
+                type="text" 
+                id="BookID" 
+                name="BookID" 
+                placeholder="Enter Book ID (e.g., 1)" 
+                required
+            >
+        </div>
+
+        <!-- 
+            New Title:
+            - User provides the new title that will replace the old one
+        -->
+        <div class="form-group">
+            <label for="Title">New Title:</label>
+            <input 
+                type="text" 
+                id="Title" 
+                name="Title" 
+                placeholder="Enter New Title" 
+                required
+            >
+        </div>
+
+        <!-- 
+            New Author:
+            - User provides the new author name that will replace the old one
+        -->
+        <div class="form-group">
+            <label for="Author">New Author:</label>
+            <input 
+                type="text" 
+                id="Author" 
+                name="Author" 
+                placeholder="Enter New Author Name" 
+                required
+            >
+        </div>
+
+        <!-- Submit button to update the book -->
+        <button type="submit">Update Book</button>
+        
+        <!-- Cancel link to go back to home -->
+        <a href="/">
+            <button type="button">Cancel</button>
+        </a>
+    </form>
+
+    <!-- 
+        UPDATE PROCESS FLOW:
+        1. User views existing books table to see available BookIDs
+        2. User enters BookID of book to update
+        3. User enters new Title and Author
+        4. User clicks "Update Book"
+        5. Browser sends POST request to /update-book with form data
+        6. Server finds book by BookID using Array.find()
+        7. Server updates book.Title and book.Author
+        8. Server redirects to home page showing updated book list
+    -->
+</body>
+
+</html>

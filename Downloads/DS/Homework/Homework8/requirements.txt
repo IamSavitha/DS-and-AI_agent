@@ -1,0 +1,4 @@
+# Python dependencies for Homework 8 - Part 2 (Multi-Agent System)
+kafka-python==2.0.2
+langchain-openai==0.1.0
+openai>=1.0.0

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Book</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <!-- 
+        ========================================================================
+        CREATE BOOK FORM - EJS TEMPLATE
+        ========================================================================
+        
+        CONCEPTS:
+        1. HTML Forms: Used to collect user input
+        2. Form Action: Specifies where to send form data (URL endpoint)
+        3. Form Method: HTTP method to use (POST for creating data)
+        4. Input Fields: Text inputs for collecting BookID, Title, Author
+        5. Form Submission: When user clicks submit, browser sends POST request
+        
+        ========================================================================
+    -->
+    
+    <div class="container">
+        <h1 class="heading">Add New Book</h1>
+    </div>
+
+    <!-- 
+        HTML Form Element:
+        - action="/add-book": The URL where form data will be sent
+        - method="POST": Uses HTTP POST method (for creating new resources)
+        - When form is submitted, browser sends POST request to /add-book
+    -->
+    <form action="/add-book" method="POST">
+        <!-- 
+            Input Field 1: Book ID
+            - type="text": Text input field
+            - name="BookID": Field name that will be sent in req.body.BookID
+            - placeholder: Hint text shown when field is empty
+            - required: HTML5 validation - field must be filled before submission
+        -->
+        <div class="form-group">
+            <label for="BookID">Book ID:</label>
+            <input 
+                type="text" 
+                id="BookID" 
+                name="BookID" 
+                placeholder="Enter Book ID (e.g., 4)" 
+                required
+            >
+        </div>
+
+        <!-- 
+            Input Field 2: Book Title
+            - name="Title": Will be available as req.body.Title in server
+        -->
+        <div class="form-group">
+            <label for="Title">Title:</label>
+            <input 
+                type="text" 
+                id="Title" 
+                name="Title" 
+                placeholder="Enter Book Title" 
+                required
+            >
+        </div>
+
+        <!-- 
+            Input Field 3: Author Name
+            - name="Author": Will be available as req.body.Author in server
+        -->
+        <div class="form-group">
+            <label for="Author">Author:</label>
+            <input 
+                type="text" 
+                id="Author" 
+                name="Author" 
+                placeholder="Enter Author Name" 
+                required
+            >
+        </div>
+
+        <!-- 
+            Submit Button:
+            - type="submit": Triggers form submission when clicked
+            - When clicked, browser collects all form data and sends POST request
+        -->
+        <button type="submit">Add Book</button>
+        
+        <!-- 
+            Cancel/Back Link:
+            - href="/": Link back to home page
+            - Allows user to cancel and return to book list
+        -->
+        <a href="/">
+            <button type="button">Cancel</button>
+        </a>
+    </form>
+
+    <!-- 
+        HOW FORM SUBMISSION WORKS:
+        1. User fills in BookID, Title, and Author fields
+        2. User clicks "Add Book" button
+        3. Browser collects form data: { BookID: "...", Title: "...", Author: "..." }
+        4. Browser sends HTTP POST request to /add-book with form data in body
+        5. Express server receives request
+        6. body-parser middleware parses form data into req.body
+        7. Server route handler (app.post('/add-book')) processes the data
+        8. Server creates new book and redirects to home page
+        9. Browser follows redirect and displays updated book list
+    -->
+</body>
+
+</html>

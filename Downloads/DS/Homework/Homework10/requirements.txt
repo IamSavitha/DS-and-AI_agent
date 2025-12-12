@@ -1,0 +1,16 @@
+# Requirements for HW10 - Customer Segmentation
+# ==============================================
+
+# Core ML Libraries
+numpy>=1.24.0          # Numerical computing and array operations
+pandas>=2.0.0          # Data manipulation and analysis
+scikit-learn>=1.3.0    # Machine learning library (K-Means, etc.)
+
+# Web Application Framework
+streamlit>=1.28.0      # Rapid web app development for ML
+
+# Visualization
+matplotlib>=3.7.0     # Plotting library for scatter plots
+
+# Model Serialization
+# pickle is part of Python standard library, no installation needed

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Book</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <!-- 
+        ========================================================================
+        DELETE BOOK FORM - EJS TEMPLATE
+        ========================================================================
+        
+        CONCEPTS:
+        1. Delete Operations: Removing resources from the system
+        2. Resource Identification: User must specify which book to delete (by BookID)
+        3. Confirmation: In production, you'd add confirmation dialogs
+        4. HTTP POST for Delete: While RESTful APIs use DELETE method, 
+           HTML forms only support GET and POST, so we use POST here
+        
+        ========================================================================
+    -->
+    
+    <div class="container">
+        <h1 class="heading">Delete Book</h1>
+    </div>
+
+    <!-- 
+        Display existing books so user knows which BookIDs are available
+        This helps prevent accidental deletion of wrong books
+    -->
+    <h2>Existing Books (select Book ID to delete):</h2>
+    <table class="books-table">
+        <thead>
+            <tr>
+                <th>Book ID</th>
+                <th>Title</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 
+                EJS Template Loop:
+                Iterates through books array and displays each book
+                Helps user identify which BookID to enter for deletion
+            -->
+            <% books.forEach(function(book){ %>
+                <tr>
+                    <td><%= book.BookID %></td>
+                    <td><%= book.Title %></td>
+                    <td><%= book.Author %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <!-- 
+        Delete Form:
+        - action="/delete-book": Sends deletion request to this endpoint
+        - method="POST": Uses POST method (HTML forms don't support DELETE method)
+    -->
+    <h2>Delete Book:</h2>
+    <form action="/delete-book" method="POST">
+        <!-- 
+            Book ID Input:
+            - User enters the BookID of the book they want to delete
+            - This is the only field needed for deletion
+        -->
+        <div class="form-group">
+            <label for="BookID">Book ID to Delete:</label>
+            <input 
+                type="text" 
+                id="BookID" 
+                name="BookID" 
+                placeholder="Enter Book ID to delete (e.g., 1)" 
+                required
+            >
+        </div>
+
+        <!-- 
+            Submit button to delete the book
+            Note: In a production app, you'd add JavaScript confirmation:
+            onclick="return confirm('Are you sure you want to delete this book?')"
+        -->
+        <button type="submit">Delete Book</button>
+        
+        <!-- Cancel link to go back to home -->
+        <a href="/">
+            <button type="button">Cancel</button>
+        </a>
+    </form>
+
+    <!-- 
+        DELETE PROCESS FLOW:
+        1. User views existing books table to see available BookIDs
+        2. User enters BookID of book to delete
+        3. User clicks "Delete Book"
+        4. Browser sends POST request to /delete-book with BookID
+        5. Server finds book index using Array.findIndex()
+        6. Server removes book from array using Array.splice()
+        7. Server redirects to home page showing updated book list (without deleted book)
+    -->
+</body>
+
+</html>

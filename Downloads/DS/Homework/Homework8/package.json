@@ -1,0 +1,22 @@
+{
+  "name": "homework8-kafka-rpc",
+  "version": "1.0.0",
+  "description": "Homework 8: Kafka RPC User Management Microservice and Multi-Agent System",
+  "main": "consumer.js",
+  "scripts": {
+    "start:consumer": "node consumer.js",
+    "start:demo": "node homework-demo.js",
+    "setup": "node setup-topics.js"
+  },
+  "keywords": [
+    "kafka",
+    "rpc",
+    "microservice",
+    "message-queue"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "kafka-node": "^5.0.0"
+  }
+}

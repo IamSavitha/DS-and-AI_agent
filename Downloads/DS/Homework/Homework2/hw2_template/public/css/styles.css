@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    color: black;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+a{
+    margin: 10px;
+}
+
+
+.heading {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.actions-container {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+
+.books-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.books-table th, .books-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.books-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.books-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.books-table tr:hover {
+    background-color: #ddd;
+}
+
+/* Form Styling */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+.container {
+    text-align: center;
+    margin-bottom: 20px;
+}

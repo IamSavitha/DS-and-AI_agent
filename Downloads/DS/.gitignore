@@ -1,0 +1,14 @@
+# Large zip files
+Homework/Homework4/task-tracker-demo.zip
+Homework/Homework5/React-redux.zip
+
+# Node modules
+**/node_modules/
+
+# Python cache
+**/__pycache__/
+**/*.pyc
+
+# OS files
+.DS_Store
+
